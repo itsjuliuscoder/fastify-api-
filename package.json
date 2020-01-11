@@ -1,0 +1,26 @@
+{
+  "name": "fastify-api",
+  "version": "1.0.0",
+  "description": "restful API with Nodejs, mongodb, fastify and swagger ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./node_modules/nodemon/bin/nodemon.js ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "fastify",
+    "swagger",
+    "restful"
+  ],
+  "author": "Julius Olajumoke",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^7.3.0",
+    "fastify": "^2.11.0",
+    "fastify-swagger": "^2.5.0",
+    "mongoose": "^5.8.7",
+    "nodemon": "^2.0.2"
+  }
+}
