@@ -16,6 +16,13 @@ fastify.get('/', async (request, reply) => {
   return { hello: 'world' }
 })
 
+// Import Swagger Options
+const swagger = require('./config/swagger')
+
+// Register Swagger
+fastify.register(require('fastify-swagger'), swagger.options)
+
+
 // Require external modules 
 const mongoose = require('mongoose')
 
@@ -25,13 +32,6 @@ mongoose.connect('mongodb://localhost/mycargarage')
 	.then(() => console.log('Mongo connected...'))
 	.catch(err => console.log(err))
 
-
-
-// Import Swagger Options
-const swagger = require('./config/swagger')
-
-// Register Swagger
-fastify.register(require('fastify-swagger'), swagger.options)
 
 // Run the server!
 const start = async () => {
