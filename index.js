@@ -37,3 +37,15 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/mycargarage')
 	.then(() => console.log('Mongo connected...'))
 	.catch(err => console.log(err))
+
+
+
+// Import Swagger Options
+const swagger = require(‘./config/swagger’)
+
+// Register Swagger
+fastify.register(require(‘fastify-swagger’), swagger.options)
+
+await fastify.listen(3000)
+fastify.swagger()
+fastify.log.info(`listening on ${fastify.server.address().port}`)
