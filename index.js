@@ -1,14 +1,14 @@
 //require routes 
 const routes = require('./routes')
 
-//initialize routes array with Fastify
-routes.forEach((route, index) => {
- fastify.route(route)
-})
-
 // Require the framework and instantiate it
 const fastify = require('fastify')({
   logger: true
+})
+
+//initialize routes array with Fastify
+routes.forEach((route, index) => {
+ fastify.route(route)
 })
 
 // Declare a route
