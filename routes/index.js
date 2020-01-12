@@ -1,5 +1,6 @@
 // Import our Controllers
 const carController = require('../controllers/carController')
+const documentation = require('../routes/documentation/carApi')
 
 //url routes
 const routes = [
@@ -17,6 +18,7 @@ const routes = [
     method: 'POST',
     url: '/api/cars',
     handler: carController.addCar,
+    schema: documentation.addCarSchema
   },
   {
     method: 'PUT',
